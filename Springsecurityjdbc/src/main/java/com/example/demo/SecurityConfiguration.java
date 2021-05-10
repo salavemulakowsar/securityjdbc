@@ -20,14 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 			auth.jdbcAuthentication()
-			.dataSource(dataSource) //auto configure h2 database
-			.withDefaultSchema() //our h2 db will have couple of tables
-			.withUser(User.withUsername("kowsar")
-					.password("salavemula")
-					.roles("USER"))
-			.withUser(User.withUsername("k")
-					.password("s")
-					.roles("ADMIN"));
+			.dataSource(dataSource); //auto configure h2 database
 	}
 	
 	@Bean
